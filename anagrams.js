@@ -13,17 +13,18 @@ if (s1 === s2) {
 if (str1.length !== str2.length) {
   console.log("not anagrams");
 } else {
-  const count = {};
+  const freq = {};
   for (let ch of str1) {
-    count[ch] = (count[ch] || 0) + 1;
-    console.log(count);
+    freq[ch] = (freq[ch] || 0) + 1;
+    console.log(freq[ch]);
   }
   for (let ch of str2) {
-    if (!count[ch]) {
+    if (!freq[ch]) {
       console.log("not anagrams");
       return;
     }
-    count[ch]--;
+    freq[ch]--;
+    console.log()
   }
   console.log("anagrams");
 }
